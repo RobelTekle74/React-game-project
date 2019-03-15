@@ -32,7 +32,7 @@ class navbar extends React.Component{
     
             <Route exact path="/" component={Home} />
             <Route path="/profile" component={UProfile} />
-            <Route path="/scores" component={ScoreBoard} />
+            {/* <Route path="/scores" component={ScoreBoard} /> */}
             <Route path="/login" component={Login} />
           </div>
       </Router>

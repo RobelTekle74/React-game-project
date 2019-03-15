@@ -9,22 +9,22 @@ import Navbar from '../Components/Navbar/Navbar'
 // Home Page
 import Home from '../Components/HomePage/Home';
 
-// Login
-import Login from '../Components/Login/Login';
+// // Login
+// import Login from '../Components/Login/Login';
 
-// Profile
-import UProfile from '../Components/Profile/UProfile';
+// // Profile
+// import UProfile from '../Components/Profile/UProfile';
 
-// Game Room
-import Board from '../Components/Board/Board';
+// // Game Room
+// import Board from '../Components/Board/Board';
 
-// Game Modes
-import Easy from '../Components/GameModes/Easy/Easy';
-import Medium from '../Components/GameModes/Medium/Medium';
-import Hard from '../Components/GameModes/Hard/Hard';
+// // Game Modes
+// import Easy from '../Components/GameModes/Easy/Easy';
+// import Medium from '../Components/GameModes/Medium/Medium';
+// import Hard from '../Components/GameModes/Hard/Hard';
 
-// Score Board
-import ScoreBoard from '../Components/ScoreBoard/ScoreBoard';
+// // Score Board
+// import ScoreBoard from '../Components/ScoreBoard/ScoreBoard';
 
 
 
@@ -35,9 +35,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="container">
-          <Navbar />
+        
+        <div>
+        <Navbar />
         </div>
+        
       </div>
     );
   }

@@ -1,13 +1,13 @@
 import React from "react";
-import store from '../../js/store';
-import Sudoku from "../../js/sudoku"
+import store from '../../Store/Store';
+import {connect} from 'react-redux';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 
 class Controls extends React.Component {
     constructor(props) {
       super(props);
-      this.state = store.getState();
+      this.state = props
     }
   
     componentDidMount() {
@@ -22,7 +22,7 @@ class Controls extends React.Component {
     }
   
     render() {
-      var time = this.state.game.time;
+      // var time = this.state.game.time;
       function f(num) {
         if (num < 10) {
           return '0'+num;
@@ -33,9 +33,9 @@ class Controls extends React.Component {
       return (
         <div className="controls">
           <p><Link to="/">Back</Link></p>
-          {Sudoku.isComplete(this.state.game.cells)
+          {/* {Sudoku.isComplete(this.state.game.cells)
             ? <p className="congratulations">Congratulations!</p>
-            : <p>{f(time.getHours())+':'+f(time.getMinutes())+':'+f(time.getSeconds())}</p>}
+            : <p>{f(time.getHours())+':'+f(time.getMinutes())+':'+f(time.getSeconds())}</p>} */}
         </div>
       )
     }
@@ -61,5 +61,11 @@ class Controls extends React.Component {
 //     }
 // }
 
-export default Controls;
+const mapStateToProps = (state) => {
+  return {
+    game: state
+  }
+}
+
+export default connect(mapStateToProps, null)(Controls);
 
