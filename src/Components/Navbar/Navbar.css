@@ -4,9 +4,10 @@
     margin: 0 0 3em 0;
     padding: 0;
     list-style: none; 
-    background-color: #f2f2f2;
+    background-color: #2C3A42;
     border-bottom: 1px solid #ccc; 
     border-top: 1px solid #ccc;
+    
 }
 
 #nav li {
@@ -21,14 +22,24 @@
     font-weight: bold;
     color: #069;
     border-right: 1px solid #ccc; 
+    color: white;
 }
 
 #nav button {
     float: right;
     display: block;
     padding: 8px 15px;
-    text-decoration: none;
-    font-weight: bold;
+    background-color: #2C3A42;
     color: #069;
     border-right: 1px solid #ccc; 
 }
+#nav button a {
+    display: block;
+    padding: 8px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #069;
+    color: white;
+    background-color: #2C3A42;
+}
+

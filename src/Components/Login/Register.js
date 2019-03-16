@@ -8,11 +8,11 @@ import { connect } from 'react-redux';
 class Register extends Component {
  constructor(props) {
    super(props);
-console.log('hi')
    this.state = {
      username: "",
      password: "",
-     redirect: "false"
+     redirect: "false",
+     player: ""
    };
  }
  
@@ -40,7 +40,7 @@ console.log('hi')
         .then( (response) => {
             console.log(response)
             this.setState({...this.state,redirect: true});
-            this.props.login(this.state.username);
+            // this.props.login(this.state.username);
         })
         .catch(function (error) {
             console.log(error);
@@ -54,39 +54,39 @@ console.log('hi')
     }
 
    return (
-        <div className="Register">
-            <p>Create an account!</p><br />
-            <form onSubmit={(event) => this.handleSubmit(event)}>
+      <div className="Register">
+        <p style={{marginTop: 0}}>Create an account!</p><br />
+        <form onSubmit={(event) => this.handleSubmit(event)}>
 
-                <FormGroup controlId="username" bssize="large">
-                    <FormLabel>Username:</FormLabel>
-                    <FormControl
-                        autoFocus
-                        type="text"
-                        value={this.state.username}
-                        onChange={this.handleChange}
-                    />
-                </FormGroup>
+          <FormGroup controlId="username" bssize="large">
+              <FormLabel>Username:</FormLabel>
+              <FormControl
+                  autoFocus
+                  type="text"
+                  value={this.state.username}
+                  onChange={this.handleChange}
+              />
+          </FormGroup>
 
-                <FormGroup controlId="password" bssize="large">
-                    <FormLabel>Password:</FormLabel>
-                    <FormControl
-                        value={this.state.password}
-                        onChange={this.handleChange}
-                        type="password"
-                    />
-                </FormGroup>
+          <FormGroup controlId="password" bssize="large">
+              <FormLabel>Password:</FormLabel>
+              <FormControl
+                  value={this.state.password}
+                  onChange={this.handleChange}
+                  type="password"
+              />
+          </FormGroup>
 
-                <Button
-                    block
-                    bssize="large"
-                    type="submit"
-                    >
-                    Register
-                </Button>
+          <Button
+              block
+              bssize="large"
+              type="submit"
+              >
+              Register
+          </Button>
 
-            </form>
-        </div>
+        </form>
+      </div>
    );
  }
 }
@@ -94,7 +94,7 @@ console.log('hi')
 //state
 const mapStateToProps = (state) => {
  return {
-   player: state.player.username,
+   users: state.users.username,
  }
 }
 

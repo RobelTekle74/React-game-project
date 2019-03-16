@@ -51,58 +51,63 @@ class Login extends Component {
  }
 
  render() {
+
+    if (this.state.redirect === true) {
+      return <Redirect to='/Profile'/>
+    }
+
    return (
         <div className="Login">
-            <p style={{marginTop: 0}}>Log in and let's start playing!</p><br />
-            <form onSubmit={this.handleSubmit}>
+          <p style={{marginTop: 0}}>Log in and let's start playing!</p><br />
+          <form onSubmit={this.handleSubmit}>
 
-                <FormGroup controlId="username" bssize="large">
-                <FormLabel>Username:</FormLabel>
-                <FormControl
-                    autoFocus
-                    type="text"
-                    value={this.state.username}
-                    onChange={this.handleChange}
-                />
-                </FormGroup>
-                <FormGroup controlId="password" bssize="large">
-                <FormLabel>Password:</FormLabel>
-                <FormControl
-                    value={this.state.password}
-                    onChange={this.handleChange}
-                    type="password"
-                />
-                </FormGroup>
-                <Button
-                block
-                bssize="large"
-                type="submit">
-                    Login
-                </Button>
-                    
-                <Link to='./register'><button>Are you new here?</button></Link>
-            </form>
+              <FormGroup controlId="username" bssize="large">
+              <FormLabel>Username:</FormLabel>
+              <FormControl
+                  autoFocus
+                  type="text"
+                  value={this.state.username}
+                  onChange={this.handleChange}
+              />
+              </FormGroup>
+              <FormGroup controlId="password" bssize="large">
+              <FormLabel>Password:</FormLabel>
+              <FormControl
+                  value={this.state.password}
+                  onChange={this.handleChange}
+                  type="password"
+              />
+              </FormGroup>
+              <Button
+              block
+              bssize="large"
+              type="submit">
+                  Login
+              </Button>
+                  
+              <Link to='/register'><button>Are you new here?</button></Link>
+          </form>
 
-            <Route path='/register' Component = {Register}/>
+          
         </div>
    );
  }
 }
 
-// //state
-// const mapStateToProps = (state) => {
-//  return {
-//    username: state.username,
-//  }
-// }
+//state
+const mapStateToProps = (state) => {
+ return {
+   username: state.username,
+ }
+}
 
-// //props
-// const mapDispatchToProps = (dispatch) => {
-//  return {
-//      login: (username) => dispatch({type: "LOG_IN", player: username}),
-//  }
-// }
+//props
+const mapDispatchToProps = (dispatch) => {
+ return {
+     login: (username) => dispatch({type: "LOG_IN", player: username}),
+ }
+}
 
 
-// export default connect(mapStateToProps, mapDispatchToProps)(Login)
-export default Login;
+export default connect(mapStateToProps, mapDispatchToProps)(Login)
+// export default Login;

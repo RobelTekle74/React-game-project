@@ -6,6 +6,7 @@ import Home from '../HomePage/Home';
 import Login from '../Login/Login';
 import UProfile from '../Profile/UProfile';
 import ScoreBoard from '../ScoreBoard/ScoreBoard';
+import Register from '../Login/Register'
 import { NavLink } from 'react-router-dom'
 
 import "./Navbar.css"
@@ -25,15 +26,16 @@ class navbar extends React.Component{
               <li>
                 <NavLink to="/scores">Scores</NavLink>
               </li>
-              <button>
+              <li>
                 <NavLink to="/login">Sign in/Sign up</NavLink>
-              </button>
+              </li>
             </ul>
     
             <Route exact path="/" component={Home} />
             <Route path="/profile" component={UProfile} />
             {/* <Route path="/scores" component={ScoreBoard} /> */}
             <Route path="/login" component={Login} />
+            <Route path='/register' component = {Register}/>
           </div>
       </Router>
       );
